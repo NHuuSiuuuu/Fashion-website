@@ -1,7 +1,7 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
+import axios from "@/utils/axios";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -53,7 +53,7 @@ function Chatbot() {
 
   const { mutate, isPending } = useMutation({
     mutationFn: async (message) => {
-      return await axios.post(`http://localhost:3001/api/search`, message);
+      return await axios.post("/search", message);
     },
     onSuccess: ({ data }) => {
       queryClient.invalidateQueries();
