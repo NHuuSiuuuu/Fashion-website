@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import {  Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useState } from "react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
@@ -20,6 +20,7 @@ function TopBar() {
     queryFn: () => searchProducts(debounceValue),
 
     enabled: debounceValue.trim() !== "", // Điều kiện dể query chạy
+    staleTime: 60 * 5 * 1000,
   });
 
   const handleHideResult = () => {
@@ -66,7 +67,7 @@ function TopBar() {
                 placement="bottom"
                 // offset={[0, 0]} // Dịch tooltip 10px sang phải, 5px xuống
                 render={(attrs) =>
-                  searchData?.products.length === 0 ? (
+                  searchData?.products?.length === 0 ? (
                     <div
                       className="bg-white w-[90vw] md:w-[30vw] shadow-sm overflow-hidden"
                       tabIndex="-1"
@@ -87,7 +88,7 @@ function TopBar() {
                       tabIndex="-1"
                       {...attrs}
                     >
-                      {searchData?.products.map((item) => (
+                      {searchData?.products?.slice(0, 8).map((item) => (
                         <div
                           key={item?.slug}
                           className="flex items-start border-b border-dotted border-[#dfe0e1] gap-4 p-[14px] hover:bg-[#fdf8f6] transition-colors"

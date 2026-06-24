@@ -157,7 +157,7 @@ function QuickViewModal({ selectedProduct, openDialog, setOpendialog }) {
                   {selectedProduct?.sizes?.map((size, idx) => (
                     <label
                       key={idx}
-                      className={`relative flex items-center justify-center w-8 h-8 transition-all duration-200 border-2 rounded-md 
+                      className={`relative flex items-center justify-center w-8 h-8 transition-all duration-300 border-2 rounded-md 
                           ${
                             size?.stock === null || size.stock === 0
                               ? "opacity-40 cursor-not-allowed border-gray-300 bg-gray-100"

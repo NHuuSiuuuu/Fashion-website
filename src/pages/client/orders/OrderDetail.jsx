@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import {
@@ -90,7 +90,7 @@ function OrderDetail() {
     );
   const isCancelled = data?.order.orderStatus;
   const isPayloadStatus = data?.order.paymentStatus;
-  console.log("isCancelled", isCancelled);
+  // console.log("isCancelled", isCancelled);
 
   const handleCancelOrder = (e) => {
     e.preventDefault();
@@ -180,7 +180,7 @@ function OrderDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-[rgb(250,248,246)]">
+    <div className="min-h-screen ">
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -213,7 +213,7 @@ function OrderDetail() {
                  ? "opacity-100 scale-100 "
                  : "opacity-0 scale-95  pointer-events-none"
              }
-            w-full fixed z-50 -translate-x-1/2 top-1/2 left-1/2 -translate-y-1/2 max-w-md p-10 duration-200 bg-white shadow-2xl `}
+            w-full fixed z-50 -translate-x-1/2 top-1/2 left-1/2 -translate-y-1/2 max-w-md p-10 duration-300 bg-white shadow-2xl `}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Icon */}
@@ -235,11 +235,11 @@ function OrderDetail() {
 
         {/* Text */}
         <div className="mb-10 text-center">
-          <h3 className="mb-3 text-lg  tracking-tight text-[#2d2520]">
+          <h3 className="mb-3 text-lg tracking-tight text-black">
             Xác nhận hủy đơn hàng
           </h3>
           <p className="text-[14px] leading-relaxed tracking-wide text-[#8b6f5f]">
-            Đơn hàng <span className="font-mono text-[#2d2520]">#{id}</span> sẽ
+            Đơn hàng <span className="font-mono text-black">#{id}</span> sẽ
             bị hủy vĩnh viễn.
             <br />
             Hành động này không thể hoàn tác.
@@ -250,7 +250,7 @@ function OrderDetail() {
         <div className="flex gap-3">
           <button
             onClick={() => setShowCancelModal(false)}
-            className="flex-1 py-3 text-[14px] font-medium tracking-widest uppercase border border-[#e8dfd7] text-[#8b6f5f] hover:border-[#2d2520] hover:text-[#2d2520] transition-all duration-300"
+            className="flex-1 py-3 text-[14px] font-medium tracking-widest uppercase border border-[#e8dfd7] text-[#8b6f5f] hover:border-[#2d2520] hover:text-black transition-all duration-300"
           >
             Giữ đơn
           </button>
@@ -265,12 +265,14 @@ function OrderDetail() {
           </button>
         </div>
       </div>
+
+      
       {/* Header */}
       <div className="border-b border-[#e8dfd7]">
         <div className="max-w-5xl px-6 py-6 mx-auto">
           <Link
             to={-1}
-            className="inline-flex items-center gap-2 mb-4 text-sm text-gray-700 transition-colors hover:text-[#2d2520]"
+            className="inline-flex items-center gap-2 mb-4 text-sm text-black"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Quay lại </span>
@@ -278,7 +280,7 @@ function OrderDetail() {
 
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-2xl  tracking-tight text-[#2d2520]">
+              <h1 className="mb-2 text-2xl tracking-tight text-black">
                 Chi Tiết Đơn Hàng
               </h1>
               <p className="font-mono text-sm  text-[#8b6f5f]">#{id}</p>
@@ -295,6 +297,8 @@ function OrderDetail() {
       <div
         className={`max-w-5xl mx-auto px-6 py-16 transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       >
+
+        
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Main Content */}
           <div className="space-y-16 lg:col-span-2">
@@ -342,11 +346,11 @@ function OrderDetail() {
                         <div className="flex-1 pb-8">
                           <div className="flex items-start justify-between mb-2">
                             <h3
-                              className={` text-base text-[#2d2520]
+                              className={` text-base text-black
                                 
                                     ${
                                       timeLineItem?.status === item.status
-                                        ? " text-[#2d2520]"
+                                        ? " text-black"
                                         : " text-gray-500"
                                     }
                                 
@@ -400,12 +404,12 @@ function OrderDetail() {
                         <img
                           src={product?.product_id.thumbnail[0]}
                           alt={product?.product_id.title}
-                          className="object-cover w-full h-full transition-all duration-500 grayscale group-hover:grayscale-0"
+                          className="object-cover w-full h-full transition-all duration-500 "
                         />
                       </div>
                       <div className="flex flex-col justify-between flex-1 min-w-0">
                         <div>
-                          <h3 className="mb-1 text-base  tracking-tight text-[#2d2520]">
+                          <h3 className="mb-1 text-base tracking-tight text-black">
                             {product?.product_id.title}
                           </h3>
                           <p className="text-sm  tracking-wide text-[#8b6f5f]">
@@ -416,7 +420,7 @@ function OrderDetail() {
                           <span className="text-[#8b6f5f]">
                             SL: {product.quantity}
                           </span>
-                          <span className=" text-[#2d2520]  font-medium">
+                          <span className="font-medium text-black ">
                             {formatPrice(product.price * product.quantity)}
                           </span>
                         </div>
@@ -453,7 +457,7 @@ function OrderDetail() {
                         />
                       </svg>
                     </div>
-                    <p className=" text-[#2d2520]">
+                    <p className="text-black ">
                       {data?.order.customer.fullName}
                     </p>
                   </div>
@@ -510,7 +514,7 @@ function OrderDetail() {
                   Thanh Toán
                 </h2>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className=" text-[#2d2520]">
+                  <span className="text-black ">
                     {data?.order.paymentMethod === "cod"
                       ? "Thanh toán khi nhận hàng"
                       : "💳 Thanh toán ngân hàng"}
@@ -524,7 +528,7 @@ function OrderDetail() {
                 </h2>
                 <div className="flex items-center gap-3 text-sm">
                   <Clock className="w-5 h-5 text-[#a47b67]" strokeWidth={1.5} />
-                  <span className=" text-[#2d2520]">null</span>
+                  <span className="text-black ">null</span>
                 </div>
               </div>
             </div>
@@ -543,13 +547,13 @@ function OrderDetail() {
                   <div className="mb-8 space-y-4 text-sm">
                     <div className="flex justify-between">
                       <span className="text-[#8b6f5f]">Ngày đặt</span>
-                      <span className=" text-[#2d2520]">
+                      <span className="text-black ">
                         {new Date(data?.order.createdAt).toLocaleDateString()}
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-[#8b6f5f]">Giờ đặt</span>
-                      <span className=" text-[#2d2520]">
+                      <span className="text-black ">
                         {new Date(data?.order.createdAt).toLocaleTimeString()}
                       </span>
                     </div>
@@ -558,14 +562,14 @@ function OrderDetail() {
                   <div className="mb-8 space-y-4 text-sm">
                     <div className="flex justify-between ">
                       <span className="text-[#8b6f5f]">Tạm tính</span>
-                      <span className="text-[#2d2520]">
+                      <span className="text-black">
                         {formatPrice(data?.order.totalPrice)}
                       </span>
                     </div>
 
                     <div className="flex justify-between ">
                       <span className="text-[#8b6f5f]">Phí vận chuyển</span>
-                      <span className="text-[#2d2520]">
+                      <span className="text-black">
                         {formatPrice(data?.order.shippingFee)}
                       </span>
                     </div>
@@ -573,15 +577,15 @@ function OrderDetail() {
                     {/* {order.discount > 0 && ( */}
                     <div className="flex justify-between ">
                       <span className="text-[#8b6f5f]">Giảm giá</span>
-                      <span className="text-[#2d2520]">{formatPrice(0)}</span>
+                      <span className="text-black">{formatPrice(0)}</span>
                     </div>
                     {/* )} */}
 
                     <div className="flex justify-between pt-4 border-t border-[#a47b67]">
-                      <span className="text-sm  tracking-widest text-[#2d2520] uppercase">
+                      <span className="text-sm tracking-widest text-black uppercase">
                         Tổng Cộng
                       </span>
-                      <span className="text-lg  text-[#2d2520]">
+                      <span className="text-lg text-black">
                         {formatPrice(data?.order.finalPrice)}
                       </span>
                     </div>
@@ -624,7 +628,7 @@ function OrderDetail() {
                 </p>
                 <Link
                   to="/support"
-                  className="text-sm   text-[#2d2520] underline hover:no-underline"
+                  className="text-sm text-black underline hover:no-underline"
                 >
                   Liên hệ hỗ trợ →
                 </Link>

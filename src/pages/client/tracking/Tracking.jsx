@@ -65,7 +65,7 @@ function OrderTracking() {
   };
   console.log(searchResult);
   return (
-    <div className="min-h-screen bg-[#faf8f6] overflow-hidden">
+    <div className="min-h-screen overflow-hidden">
       <SeoHead title="Tra Cứu Đơn Hàng" />
       <div
         className={`max-w-4xl mx-auto px-8 transition-all duration-1000 ${mounted ? "opacity-100" : "opacity-0"}`}

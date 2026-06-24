@@ -1,8 +1,5 @@
-import HomePage from "../pages/HomePage";
+import { lazy } from "react";
 import LayoutDefault from "../components/layout/LayoutDefault";
-import Collection from "../components/products/Products";
-import ProductDetail from "../components/products/ProductDetail";
-import Cart from "../components/products/Cart";
 import LayoutDefaultAdmin from "@/components/admin/layout/LayoutDefault";
 import DashBoard from "@/pages/admin/DashBoard";
 import ProductAdmin from "@/pages/admin/product/ProductAdmin";
@@ -33,16 +30,27 @@ import ShippingMethodDetail from "@/pages/admin/shipping_method/ShippingMethodDe
 import ShippingMethodUpdate from "@/pages/admin/shipping_method/ShippingMethodUpdate";
 import Orders from "@/pages/admin/orders/order";
 import OrderSuccess from "@/pages/client/orders/OrderSuccess";
-import OrderDetail from "@/pages/client/orders/OrderDetail";
 import OrderTracking from "@/pages/client/tracking/Tracking";
 import OrderDetailPage from "@/pages/admin/orders/OrderDetailAdmin";
 import AdminOrderDetail from "@/pages/admin/orders/OrderDetailAdmin";
-import ProducstNew from "@/pages/client/products/ProductsNew";
 import Account from "@/pages/client/account/Account";
 import AuthRedirect from "@/components/admin/layout/AuthRedirect";
 import ProtectedRoute from "@/components/protected-route/ProtectedRoute";
 import AuthRoute from "@/components/protected-route/AuthRoute";
 import AdminRoute from "@/components/protected-route/AdminRoute";
+import NotFound from "@/pages/NotFound";
+
+const HomePage = lazy(() => import("../pages/HomePage"));
+const ProductDetail = lazy(
+  () => import("../components/products/ProductDetail"),
+);
+
+const Collection = lazy(() => import("../components/products/Products"));
+const Cart = lazy(() => import("../components/products/Cart"));
+
+const ProducstNew = lazy(() => import("@/pages/client/products/ProductsNew"));
+const OrderDetail = lazy(() => import("@/pages/client/orders/OrderDetail"));
+const Contact = lazy(() => import("@/pages/client/contact/Contact"));
 
 export const routes = [
   {
@@ -75,6 +83,10 @@ export const routes = [
         path: "tracking",
         element: <OrderTracking />,
       },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
 
       {
         element: <ProtectedRoute />,
@@ -84,6 +96,10 @@ export const routes = [
             element: <Account />,
           },
         ],
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
@@ -124,7 +140,7 @@ export const routes = [
       },
     ],
   },
- 
+
   {
     path: "/admin",
     element: <AdminRoute />,

@@ -33,9 +33,12 @@ function CartDrawer({ cartMounted, cart_id, data, openCart, setOpenCart }) {
   };
   return (
     <div
+      //  className={`${
+      //   openCart ? "translate-x-0" : "-translate-x-full"
+      // } fixed z-40 top-0 w-full h-dvh bg-white transform transition-transform duration-300 left ease-in shadow-md`}
       className={`${cartMounted ? "transition-transform duration-300" : ""}
-                  ${openCart ? "translate-x-0" : "translate-x-full pointer-events-none"}
-                   fixed bg-white md:w-[550px] z-50 top-0 h-full right-0`}
+      ${openCart ? "translate-x-0" : "translate-x-full pointer-events-none"}
+       fixed bg-white md:w-[550px]  transition-transform duration-300 ease-in z-50 top-0 h-full right-0`}
     >
       {/* Giỏ hàng */}
       <div className="pt-[60px] px-[40px] md:px-[70px] pb-[250px]  overflow-y-auto h-full">

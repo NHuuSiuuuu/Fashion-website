@@ -2,13 +2,12 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 
-function MobileNav({ setOpen ,open }) {
-    
+function MobileNav({ setOpen, open }) {
   return (
     <div
       className={`${
         open ? "translate-x-0" : "-translate-x-full"
-      } fixed z-40 top-0 w-full h-dvh bg-white transform transition-transform duration-200 ease-in shadow-md`}
+      } fixed z-40 top-0 w-full h-dvh bg-white transform transition-transform duration-300 ease-in shadow-md`}
     >
       <ul className="flex flex-col pt-[60px]  p-[50px] pb-[250px] ">
         <div className="absolute right-0 pr-[50px]">

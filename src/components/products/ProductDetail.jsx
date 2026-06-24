@@ -196,7 +196,7 @@ function ProductDetail() {
                   {product.sizes?.map((size) => (
                     <label
                       key={size._id}
-                      className={` relative w-10 h-10 flex items-center justify-center rounded-md border-2   transition-all duration-200 
+                      className={` relative w-10 h-10 flex items-center justify-center rounded-md border-2   transition-all duration-300 
                               ${
                                 size?.stock === null || size.stock === 0
                                   ? "opacity-40 cursor-not-allowed border-gray-300 bg-gray-100"

@@ -73,7 +73,7 @@ function Register() {
               placeholder="Họ và tên"
               className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
             />
-            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
               Họ và tên
             </label>
           </div>
@@ -87,7 +87,7 @@ function Register() {
               placeholder="Email"
               className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
             />
-            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
               Email
             </label>
           </div>
@@ -100,7 +100,7 @@ function Register() {
               placeholder="Số điện thoại"
               className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
             />
-            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
               Số điện thoại
             </label>
           </div>
@@ -114,7 +114,7 @@ function Register() {
               placeholder="Mật khẩu"
               className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
             />
-            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
               Mật khẩu
             </label>
           </div>
@@ -127,7 +127,7 @@ function Register() {
               placeholder="Nhâp lại mật khẩu"
               className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
             />
-            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+            <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
               Mật khẩu
             </label>
           </div>
@@ -135,7 +135,7 @@ function Register() {
           <button
             type="submit"
             disabled={isPending}
-            className="w-full mt-4 py-[0.9rem] px-6 bg-[#111] hover:bg-[#333] active:bg-black text-white text-[14px] font-medium tracking-[0.25em] uppercase border-none rounded-none cursor-pointer transition-colors duration-200"
+            className="w-full mt-4 py-[0.9rem] px-6 bg-[#111] hover:bg-[#333] active:bg-black text-white text-[14px] font-medium tracking-[0.25em] uppercase border-none rounded-none cursor-pointer transition-colors duration-300"
           >
             {isPending ? "Đang tạo..." : "Tạo tài khoản"}
           </button>

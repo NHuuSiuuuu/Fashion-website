@@ -205,7 +205,7 @@ function Checkout() {
                 value={form?.fullName}
                 className="w-full peer border border-[#d9d9d9] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#338dbc] focus:placeholder-transparent"
               />
-              <label className="text-[#333333] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+              <label className="text-[#333333] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
                 Họ và tên
               </label>
             </div>
@@ -219,7 +219,7 @@ function Checkout() {
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="z-50 w-full peer border border-[#d9d9d9] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#338dbc] focus:placeholder-transparent"
                 />
-                <label className=" pointer-events-none z-10 text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+                <label className=" pointer-events-none z-10 text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
                   Email
                 </label>
               </div>
@@ -231,7 +231,7 @@ function Checkout() {
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full peer border border-[#d9d9d9] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#338dbc] focus:placeholder-transparent"
                 />
-                <label className=" pointer-events-none text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+                <label className=" pointer-events-none text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
                   Số điện thoại
                 </label>
               </div>
@@ -244,7 +244,7 @@ function Checkout() {
                 placeholder="Ghi chú"
                 className="w-full peer border border-[#d9d9d9] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#338dbc] focus:placeholder-transparent"
               />
-              <label className=" pointer-events-none text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+              <label className=" pointer-events-none text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
                 Ghi chú
               </label>
             </div>
@@ -258,7 +258,7 @@ function Checkout() {
                   className="w-full px-4 py-3.5 border border-gray-300 rounded-md 
                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
                     appearance-none bg-white text-gray-700 cursor-pointer
-                    hover:border-gray-400 transition-colors duration-200"
+                    hover:border-gray-400 transition-colors duration-300"
                 >
                   <option value="" className="text-gray-400">
                     Chọn tỉnh/thành
@@ -282,7 +282,7 @@ function Checkout() {
                   disabled={!selectedProvinceCode}
                   className={`w-full px-4 py-3.5 border rounded-md 
                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                    appearance-none text-gray-700 cursor-pointer transition-colors duration-200
+                    appearance-none text-gray-700 cursor-pointer transition-colors duration-300
                     ${
                       !selectedProvinceCode
                         ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed"
@@ -311,7 +311,7 @@ function Checkout() {
                   disabled={!selectedDistrictCode}
                   className={`w-full px-4 py-3.5 border rounded-md 
                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                    appearance-none text-gray-700 cursor-pointer transition-colors duration-200
+                    appearance-none text-gray-700 cursor-pointer transition-colors duration-300
                     ${
                       !selectedDistrictCode
                         ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed"
@@ -340,7 +340,7 @@ function Checkout() {
                 placeholder="Chi tiết"
                 className="w-full peer border border-[#d9d9d9] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#338dbc] focus:placeholder-transparent"
               />
-              <label className=" pointer-events-none text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+              <label className=" pointer-events-none text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
                 Chi tiết
               </label>
             </div>
@@ -379,7 +379,7 @@ function Checkout() {
             {shippingMethod?.map((item) => (
               <div
                 key={item.code}
-                className={` flex items-center justify-between  p-4 mb-3 border-2 rounded-lg transition-all duration-200  cursor-pointer group
+                className={` flex items-center justify-between  p-4 mb-3 border-2 rounded-lg transition-all duration-300  cursor-pointer group
                           ${
                             selectedShippingMethod === item.code
                               ? "border-blue-500 bg-blue-50" // Khi được chọn
@@ -394,7 +394,7 @@ function Checkout() {
                   {/* Info */}
                   <div>
                     <p
-                      className={`text-sm font-medium transition-colors duration-200`}
+                      className={`text-sm font-medium transition-colors duration-300`}
                     >
                       {item?.name}
                     </p>
@@ -407,7 +407,7 @@ function Checkout() {
                 {/* Right side - Price */}
                 <div className="text-right">
                   <p
-                    className={`text-sm font-semibold transition-colors duration-200`}
+                    className={`text-sm font-semibold transition-colors duration-300`}
                   >
                     {formatPrice(item?.fee)}
                   </p>
@@ -496,7 +496,7 @@ function Checkout() {
             )}
 
             <div className="flex space-x-4  my-[15px]">
-              <button className="flex items-center justify-center px-6 py-3 text-gray-700 transition-all duration-200 border border-gray-300 rounded-md hover:border-gray-400 hover:shadow-sm">
+              <button className="flex items-center justify-center px-6 py-3 text-gray-700 transition-all duration-300 border border-gray-300 rounded-md hover:border-gray-400 hover:shadow-sm">
                 <svg
                   className="w-5 h-5 mr-2"
                   fill="none"
@@ -514,7 +514,7 @@ function Checkout() {
               </button>
               <button
                 onClick={handleSubmit}
-                className="flex items-center justify-center px-8 py-3 font-medium text-white transition-all duration-200 bg-[#333333] rounded-md  hover:shadow-lg"
+                className="flex items-center justify-center px-8 py-3 font-medium text-white transition-all duration-300 bg-[#333333] rounded-md  hover:shadow-lg"
               >
                 Hoàn tất đơn hàng
               </button>
@@ -587,7 +587,7 @@ function Checkout() {
                 placeholder="Mã giảm giá"
                 className="w-full peer border border-[#d9d9d9] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#338dbc] focus:placeholder-transparent"
               />
-              <label className="text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+              <label className="text-[#333333] font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
                 Mã giảm giá
               </label>
               <button className="px-6 py-3 text-sm font-medium text-white transition-colors bg-gray-800 rounded-lg hover:bg-black whitespace-nowrap">

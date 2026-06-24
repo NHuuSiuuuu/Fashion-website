@@ -29,7 +29,7 @@ function Login() {
       {/* Left beige panel */}
       <div className="hidden lg:flex flex-col justify-between w-[42%] shrink-0 bg-[#f5f2ec] px-10 py-12">
         <span className="inline-block bg-[#111] text-[#f5f2ec] text-[18px] tracking-[0.3em] uppercase px-2 py-[30px]">
-           NHuu · Boutique
+          NHuu · Boutique
         </span>
         <div>
           <p className="text-[2.8rem] font-medium text-[#111] tracking-[-0.03em] leading-none mb-[0.4rem]">
@@ -68,7 +68,7 @@ function Login() {
             placeholder="Email"
             className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
           />
-          <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+          <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
             Email
           </label>
         </div>
@@ -82,7 +82,7 @@ function Login() {
             placeholder="Mật khẩu"
             className="w-full peer border border-[#888] text-[#111] rounded-[4px] py-[14px] pr-[40px] pl-[26px] focus:outline-[#111] focus:placeholder-transparent"
           />
-          <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-200 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
+          <label className="text-[#444] pointer-events-none font-medium left-[22px] peer-focus:-translate-y-1/2 px-[4px] translate-y-1/2 bg-white transition-all duration-300 opacity-0 peer-focus:opacity-100 absolute peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:opacity-100">
             Mật khẩu
           </label>
         </div>
@@ -98,7 +98,7 @@ function Login() {
 
         <button
           type="submit"
-          className="w-full mt-4 py-[0.9rem] px-6 bg-[#111] hover:bg-[#333] active:bg-black text-white text-[14px] font-medium tracking-[0.25em] uppercase border-none rounded-none cursor-pointer transition-colors duration-200"
+          className="w-full mt-4 py-[0.9rem] px-6 bg-[#111] hover:bg-[#333] active:bg-black text-white text-[14px] font-medium tracking-[0.25em] uppercase border-none rounded-none cursor-pointer transition-colors duration-300"
         >
           {isPending ? "Đang đăng nhập" : "Đăng nhập"}
         </button>

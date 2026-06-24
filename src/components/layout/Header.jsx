@@ -21,16 +21,6 @@ function Header({ active }) {
 
   const { data, isLoading, isError, cart_id } = useCart();
 
-  console.log("user", user);
-
-  if (isLoading)
-    return (
-      <div className="p-4 space-y-2">
-        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-      </div>
-    );
   if (isError)
     return (
       <div className="p-4 space-y-2">
@@ -58,7 +48,7 @@ function Header({ active }) {
             <div className="flex-3 flex md:flex md:flex-1 justify-center items-center px-[15px]">
               <Link
                 to="/"
-                className="block md:text-[30px] text-[20px] text-center"
+                className="block md:text-[30px] font-bold text-[20px] text-center"
               >
                 NHUU Boutique
               </Link>
@@ -84,11 +74,9 @@ function Header({ active }) {
                     <Link to="/set-quan-ao-nu">SETS</Link>
                   </li>
                   <li className="inline-block py-5">
-                    <Link to="/products">BIKINI</Link>
-                  </li>
-                  <li className="inline-block py-5">
                     <Link to="/products">ACCESORIES</Link>
                   </li>
+
                   <Tippy
                     placement="bottom"
                     // interactive
@@ -123,6 +111,9 @@ function Header({ active }) {
                       Tra cứu đơn hàng
                     </Link>
                   </li>
+                  <li className="inline-block py-5">
+                    <Link to="/contact">Contact</Link>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -153,22 +144,24 @@ function Header({ active }) {
                   </Link>
                 )}
               </div>
+
               <Link className="inline-flex items-center">
-                <span>
-                  <div className="relative">
-                    <ShoppingBag
-                      onClick={() => {
-                        setOpenCart(true);
-                      }}
-                      className="size-8 pr-[10px]"
-                    />
-                    <div className="absolute top-0 right-0">
-                      <span className="font-bold">
-                        {data?.products?.length}
+                <div className="relative">
+                  <ShoppingBag
+                    onClick={() => setOpenCart(true)}
+                    className="size-8 pr-[10px]"
+                  />
+
+                  <div className="absolute -top-1 -right-1">
+                    {isLoading ? (
+                      <span className="text-xs animate-pulse">...</span>
+                    ) : (
+                      <span className="text-xs font-bold">
+                        {data?.products?.length ?? 0}
                       </span>
-                    </div>
+                    )}
                   </div>
-                </span>
+                </div>
               </Link>
             </div>
           </div>
@@ -195,6 +188,7 @@ function Header({ active }) {
           openCart ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       />
+
       <CartDrawer
         cartMounted={cartMounted}
         cart_id={cart_id}
