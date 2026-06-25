@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import {
+  AlertCircle,
   ChevronLeft,
   CheckCircle,
   Clock,
@@ -14,8 +15,6 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { formatPrice } from "@/utils/price";
 import { toast } from "react-toastify";
 import { Slide, ToastContainer } from "react-toastify";
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function OrderDetail() {
   const { id } = useParams();
@@ -65,10 +64,7 @@ function OrderDetail() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="max-w-md p-8 text-center border border-red-200 rounded-lg bg-red-50">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full">
-            <FontAwesomeIcon
-              icon={faCircleExclamation}
-              className="text-red-600"
-            />
+            <AlertCircle className="text-red-600" size={24} />
           </div>
           <h3 className="mb-2 text-xl font-semibold text-red-800">
             Đã xảy ra lỗi

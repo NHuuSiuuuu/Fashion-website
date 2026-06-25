@@ -1,10 +1,11 @@
 import { calculateDiscountedPrice, formatPrice } from "@/utils/price";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 import axios from "axios";
 import { CheckCircle, XIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
-import Slider from "react-slick";
 
 function QuickViewModal({ selectedProduct, openDialog, setOpendialog }) {
   //   const [openDialog, setOpendialog] = useState(false);
@@ -21,14 +22,6 @@ function QuickViewModal({ selectedProduct, openDialog, setOpendialog }) {
     cartId = crypto.randomUUID();
     localStorage.setItem("cart_id", cartId);
   }
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    swipeToSlide: true, // cho phép vuốt tự do không bị cứng 1 bước
-  };
   const handleOnClickSize = (quantity) => {
     if (selectedSize.stock > quantity) {
       setQuantity(quantity + 1);
@@ -103,19 +96,31 @@ function QuickViewModal({ selectedProduct, openDialog, setOpendialog }) {
                 alt={selectedProduct?.title}
               />
             </div>
-            {/* Slick small */}
             <div>
-              <Slider {...settings}>
+              <Splide
+                options={{
+                  rewind: true,
+                  type: "slide",
+                  autoplay: false,
+                  speed: 500,
+                  arrows: true,
+                  pagination: false,
+                  perMove: 1,
+                  perPage: 4,
+                  flickPower: 3000,
+                }}
+              >
                 {selectedProduct?.thumbnail.map((item, index) => (
-                  <div
-                    key={index}
-                    onClick={() => setIndexThumb(index)}
-                    className="px-2"
-                  >
-                    <img className="w-full border" src={item} alt="" />
-                  </div>
+                  <SplideSlide key={index}>
+                    <div
+                      onClick={() => setIndexThumb(index)}
+                      className="px-2"
+                    >
+                      <img className="w-full" src={item} alt="" />
+                    </div>
+                  </SplideSlide>
                 ))}
-              </Slider>
+              </Splide>
             </div>
           </div>
 

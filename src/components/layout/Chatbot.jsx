@@ -1,8 +1,6 @@
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "@/utils/axios";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { ChevronDown, MessageCircle, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 function Chatbot() {
@@ -134,7 +132,7 @@ function Chatbot() {
             onClick={() => setIsOpen(false)}
             aria-label="Đóng chat"
           >
-            <FontAwesomeIcon icon={faTimes} className="text-[16px]" />
+            <X className="text-[16px]" size={16} />
           </button>
         </div>
 

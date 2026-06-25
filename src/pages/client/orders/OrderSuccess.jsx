@@ -1,10 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { formatPrice } from "@/utils/price";
+import { Check } from "lucide-react";
 
 function OrderSuccess() {
   const [mounted, setMounted] = useState(false);
@@ -34,7 +33,7 @@ function OrderSuccess() {
         {/* SUCCESS ICON & MESSAGE */}
         <div className="mb-20 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 mb-8 border-2 border-black rounded-full">
-            <FontAwesomeIcon className="text-[24px]" icon={faCheck} />
+            <Check className="text-[24px]" size={24} />
           </div>
 
           <h1 className="mb-4 text-3xl font-medium  text-[#8b6f5f] letter-space">

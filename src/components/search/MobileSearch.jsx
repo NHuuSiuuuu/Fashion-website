@@ -1,18 +1,10 @@
-
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleXmark,
-  faMagnifyingGlass,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
-
 // import Tippy from "@tippyjs/react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import useDebounce from "@/hooks/useDebounce";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { Loader, Search, XCircle } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 import { formatPrice, calculateDiscountedPrice } from "../../utils/price";
@@ -133,26 +125,20 @@ function MobileSearch() {
                   setSearchValue("");
                 }}
               >
-                <FontAwesomeIcon
-                  className="text-[#d7d7d7] text-[14px]"
-                  icon={faCircleXmark}
-                />
+                <XCircle className="text-[#d7d7d7] text-[14px]" size={14} />
               </button>
             )}
             {searchLoading && (
-              <FontAwesomeIcon
+              <Loader
                 className={`text-[14px] text-[#d7d7d7] animate-spin`}
-                icon={faSpinner}
+                size={14}
               />
             )}
           </div>
         </div>
 
         <button className="absolute w-[10%] right-0 -translate-y-1/2 top-1/2">
-          <FontAwesomeIcon
-            className="text-[15px] text-[#d7d7d7] "
-            icon={faMagnifyingGlass}
-          />
+          <Search className="text-[15px] text-[#d7d7d7] " size={15} />
         </button>
       </div>
     </HeadlessTippy>

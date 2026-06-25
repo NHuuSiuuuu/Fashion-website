@@ -1,20 +1,7 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faFilter,
-  faEye,
-  faEdit,
-  faTrash,
-  faChevronLeft,
-  faChevronRight,
-  faSort,
-  faDownload,
-  faPrint,
-  faSync,
-} from "@fortawesome/free-solid-svg-icons";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
+import { ArrowUpDown } from "lucide-react";
 
 function Orders() {
   const [selecstedStatus, setSelectedStatus] = useState("all");
@@ -143,10 +130,7 @@ function Orders() {
                 >
                   <div className="flex items-center gap-1 cursor-pointer group hover:text-gray-700">
                     Mã đơn
-                    <FontAwesomeIcon
-                      icon={faSort}
-                      className="text-xs text-gray-400 group-hover:text-gray-600"
-                    />
+                    <ArrowUpDown className="text-xs text-gray-400 group-hover:text-gray-600" size={14} />
                   </div>
                 </th>
                 <th
@@ -356,7 +340,7 @@ function Orders() {
         {(!orders?.orders || orders.orders.length === 0) && (
           <div className="py-12 text-center">
             <div className="mb-3 text-gray-400">
-              {/* <FontAwesomeIcon icon={faPackage} className="w-12 h-12" /> */}
+              {/* Placeholder for empty-state icon */}
             </div>
             <h3 className="mb-1 text-sm font-medium text-gray-900">
               Chưa có đơn hàng
@@ -385,13 +369,13 @@ function Orders() {
                   className="px-3 py-1 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50"
                   disabled
                 >
-                  <FontAwesomeIcon icon={faChevronLeft} className="w-3 h-3" />
+                  <span className="inline-block w-3 h-3" />
                 </button>
                 <span className="px-3 py-1 text-sm text-white bg-blue-600 rounded-md">
                   1
                 </span>
                 <button className="px-3 py-1 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50">
-                  <FontAwesomeIcon icon={faChevronRight} className="w-3 h-3" />
+                  <span className="inline-block w-3 h-3" />
                 </button>
               </div>
             </div>

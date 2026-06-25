@@ -1,12 +1,5 @@
+import { ChevronDown, ChevronUp, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
-import {
-  faChevronDown,
-  faChevronUp,
-  faEnvelope,
-  faLocationDot,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer() {
   const [open, setOpen] = useState(null);
@@ -40,9 +33,9 @@ function Footer() {
               </h4>
               <span className="text-white md:hidden">
                 {open === 1 ? (
-                  <FontAwesomeIcon icon={faChevronUp} />
+                  <ChevronUp size={16} />
                 ) : (
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <ChevronDown size={16} />
                 )}
               </span>
             </div>
@@ -76,9 +69,9 @@ function Footer() {
               </h4>
               <span className="text-white md:hidden">
                 {open === 2 ? (
-                  <FontAwesomeIcon icon={faChevronUp} />
+                  <ChevronUp size={16} />
                 ) : (
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <ChevronDown size={16} />
                 )}
               </span>
             </div>
@@ -90,7 +83,7 @@ function Footer() {
             >
               <ul className="mt-3 text-[#9f9f9f] space-y-3">
                 <li className="flex gap-4 md:text-[14px]">
-                  <FontAwesomeIcon icon={faLocationDot} />
+                  <MapPin size={16} />
                   <p>
                     * Địa chỉ abc 1 <br />
                     * Địa chỉ abc 2 <br />
@@ -99,12 +92,12 @@ function Footer() {
                 </li>
 
                 <li className="flex gap-4">
-                  <FontAwesomeIcon icon={faPhone} />
+                  <Phone size={16} />
                   <p>9999999999</p>
                 </li>
 
                 <li className="flex gap-4">
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  <Mail size={16} />
                   <p>Admin@gmail.com</p>
                 </li>
               </ul>

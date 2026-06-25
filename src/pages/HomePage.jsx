@@ -22,6 +22,13 @@ function HomePage() {
   }, []);
   // console.log("isMobile", isMobile);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <>
       <SeoHead />

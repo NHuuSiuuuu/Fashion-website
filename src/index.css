@@ -339,4 +339,20 @@
         100% 100%;
     }
   }
+
+
+
+.loader-1 {
+  width: fit-content;
+  font-weight: 600;
+  font-size: 14px;
+  color:#BA9C8D;
+  padding-bottom: 8px;
+  background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+  animation: l2 0.3s linear infinite;
+}
+.loader-1:before {
+  content:"Loading..."
+}
+@keyframes l2 {to{background-size: 100% 2px}}
 }

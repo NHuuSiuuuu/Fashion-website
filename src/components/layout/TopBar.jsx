@@ -1,11 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { Search } from "lucide-react";
+import { Search, XCircle, Loader } from "lucide-react";
 import { useState } from "react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import useDebounce from "@/hooks/useDebounce";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
+// switched from FontAwesome to lucide-react icons
 import { Link } from "react-router";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/price";
 import { searchProducts } from "@/apis/products.api";
@@ -148,16 +147,16 @@ function TopBar() {
                       <div>
                         {!!searchValue && !searchLoading && (
                           <button className="clear" onClick={handleClear}>
-                            <FontAwesomeIcon
-                              className="text-[#ccc] text-[13px] hover:text-[#999] transition"
-                              icon={faCircleXmark}
+                            <XCircle
+                              size={13}
+                              className="text-[#ccc] hover:text-[#999] transition"
                             />
                           </button>
                         )}
                         {searchLoading && (
-                          <FontAwesomeIcon
-                            className="text-[13px] text-[#ccc] animate-spin"
-                            icon={faSpinner}
+                          <Loader
+                            size={13}
+                            className="text-[#ccc] animate-spin"
                           />
                         )}
                       </div>

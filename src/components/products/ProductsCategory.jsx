@@ -1,26 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 import axios from "axios";
 import {
-  ArrowDown,
-  ArrowDownAZ,
+  AlertCircle,
   CheckCircle,
-  SlidersHorizontal,
-  X,
   XIcon,
   ZoomIn,
+  Loader,
+  Search,
+  XCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Slider from "react-slick";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/price";
 import Pagination from "../layout/Pagination";
 import FilterSort from "./FilterSort";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleXmark,
-  faMagnifyingGlass,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
 
 // import Tippy from "@tippyjs/react";
 import HeadlessTippy from "@tippyjs/react/headless";
@@ -145,10 +140,7 @@ function ProductsCategory({ category_id, title_breadcrumb }) {
       <div className="flex items-center justify-center min-h-screen">
         <div className="max-w-md p-8 text-center border border-red-200 rounded-lg bg-red-50">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full">
-            <FontAwesomeIcon
-              icon={faCircleExclamation}
-              className="text-red-600"
-            />
+            <AlertCircle className="text-red-600" size={24} />
           </div>
           <h3 className="mb-2 text-xl font-semibold text-red-800">
             Đã xảy ra lỗi
@@ -260,26 +252,20 @@ function ProductsCategory({ category_id, title_breadcrumb }) {
                     setSearchValue("");
                   }}
                 >
-                  <FontAwesomeIcon
-                    className="text-[#d7d7d7] text-[14px]"
-                    icon={faCircleXmark}
-                  />
+                  <XCircle className="text-[#d7d7d7] text-[14px]" size={14} />
                 </button>
               )}
               {searchLoading && (
-                <FontAwesomeIcon
+                <Loader
                   className={`text-[14px] text-[#d7d7d7] animate-spin`}
-                  icon={faSpinner}
+                  size={14}
                 />
               )}
             </div>
           </div>
 
           <button className="absolute w-[10%] right-0 -translate-y-1/2 top-1/2">
-            <FontAwesomeIcon
-              className="text-[15px] text-[#d7d7d7] "
-              icon={faMagnifyingGlass}
-            />
+            <Search className="text-[15px] text-[#d7d7d7] " size={15} />
           </button>
         </div>
       </HeadlessTippy>
@@ -437,24 +423,37 @@ function ProductsCategory({ category_id, title_breadcrumb }) {
               <div className="px-2 mb-[20px]  aspect-[3/4]">
                 {/* img product full */}
                 <img
-                  className=" object-cover h-full w-full overflow-hidden"
+                  className="object-cover w-full h-full overflow-hidden "
                   src={selectedProduct?.thumbnail[indexThumb]}
                   alt={selectedProduct?.title}
                 />
               </div>
               {/* Slick small */}
               <div>
-                <Slider {...settings}>
+                <Splide
+                  options={{
+                    rewind: true, // đi đến cuối sẽ dừng
+                    type: "slide",
+                    autoplay: false,
+                    speed: 500,
+                    arrows: true, // nút bấm
+                    pagination: false,
+                    perMove: 1, // mỗi lần chuyển bnh slide
+                    perPage: 4, // hiển thị bao nhiêu sản phẩm tren màn hình
+                    flickPower: 3000,
+                  }}
+                >
                   {selectedProduct?.thumbnail.map((item, index) => (
-                    <div
-                      key={index}
-                      onClick={() => setIndexThumb(index)}
-                      className="px-2"
-                    >
-                      <img className="w-full border" src={item} alt="" />
-                    </div>
+                    <SplideSlide key={index}>
+                      <div
+                        onClick={() => setIndexThumb(index)}
+                        className="px-2"
+                      >
+                        <img className="w-full " src={item} alt="" />
+                      </div>
+                    </SplideSlide>
                   ))}
-                </Slider>
+                </Splide>
               </div>
             </div>
 

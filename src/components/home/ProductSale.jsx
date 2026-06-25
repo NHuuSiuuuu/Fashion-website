@@ -1,5 +1,4 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { ZoomIn } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";

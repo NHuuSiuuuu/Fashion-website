@@ -74,14 +74,11 @@ function ProductList() {
                       setSelectedProduct(item);
                     }}
                     className="
-                    absolute top-1/2 opacity- left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-400 group-hover:scale-100 group-hover:opacity-100
+                    absolute top-1/2 opacity-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100
                     scale-0 size-[44px] rounded-full bg-white hidden md:flex items-center justify-center 
                     "
                   >
-                    <div className="">
-                      {" "}
-                      <ZoomIn className="size-[22px] text-black" />
-                    </div>
+                      <ZoomIn className="size-[20px] text-black" />
                   </div>
 
                   <div className="">

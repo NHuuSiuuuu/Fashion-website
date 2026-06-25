@@ -2,20 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "../../../utils/axios";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowLeft,
-  faArrowsRotate,
-  faBoxArchive,
-  faCode,
-  faFileImage,
-  faHouse,
-  faInfo,
-  faLocationDot,
-  faPenToSquare,
-  faPlus,
-  faStar,
-} from "@fortawesome/free-solid-svg-icons";
+  AlertCircle,
+  ArrowLeft,
+  Box,
+  Code,
+  ImageIcon,
+  Info,
+  MapPin,
+  Pencil,
+  Star,
+} from "lucide-react";
 
 function ProductDetailAdmin() {
   const { id } = useParams();
@@ -105,10 +102,7 @@ function ProductDetailAdmin() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="max-w-md p-8 text-center border border-red-200 rounded-lg bg-red-50">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full">
-            <FontAwesomeIcon
-              icon={faCircleExclamation}
-              className="text-red-600"
-            />
+            <AlertCircle className="text-red-600" size={24} />
           </div>
           <h3 className="mb-2 text-xl font-semibold text-red-800">
             Đã xảy ra lỗi
@@ -160,9 +154,9 @@ function ProductDetailAdmin() {
                   Chi tiết thông tin sản phẩm
                 </p>
                 <div className="flex items-center mt-4 text-sm text-gray-500">
-                  <FontAwesomeIcon
-                    icon={faInfo}
+                  <Info
                     className="text-[6px] p-1 border rounded-[100%] mr-1"
+                    size={14}
                   />
                   ID sản phẩm:{" "}
                   <span className="px-2 py-1 ml-1 font-mono bg-gray-100 rounded">
@@ -178,7 +172,7 @@ function ProductDetailAdmin() {
                     Sửa sản phẩm
                   </div>
                   <div className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">
-                    <FontAwesomeIcon icon={faPenToSquare} />
+                    <Pencil size={16} />
                   </div>
                 </div>
               </Link>
@@ -186,7 +180,7 @@ function ProductDetailAdmin() {
                 to="/admin/products"
                 className="inline-flex items-center px-4 py-2 font-medium text-gray-700 transition border border-gray-300 rounded-lg hover:bg-gray-50"
               >
-                <FontAwesomeIcon icon={faArrowLeft} />
+                <ArrowLeft size={16} />
                 Quay lại
               </Link>
             </div>
@@ -200,7 +194,7 @@ function ProductDetailAdmin() {
             {/* Product ID */}
             <div className="mb-6">
               <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-800 bg-gray-100 rounded-full">
-                <FontAwesomeIcon icon={faCode} className="w-4 h-4 mr-2" />
+                <Code className="w-4 h-4 mr-2" size={16} />
                 ID: {product._id}
               </span>
             </div>
@@ -219,10 +213,7 @@ function ProductDetailAdmin() {
                       />
                     ) : (
                       <div className="flex items-center justify-center w-full h-full">
-                        <FontAwesomeIcon
-                          icon={faFileImage}
-                          className="text-[90px] text-gray-400"
-                        />
+                        <ImageIcon className="text-[90px] text-gray-400" size={90} />
                       </div>
                     )}
                   </div>
@@ -278,10 +269,7 @@ function ProductDetailAdmin() {
 
                   {product.featured === "1" && (
                     <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-yellow-800 bg-yellow-100 rounded-full">
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-[12px]  mr-1"
-                      />
+                      <Star className="text-[12px]  mr-1" size={12} />
                       Nổi bật
                     </span>
                   )}
@@ -306,10 +294,7 @@ function ProductDetailAdmin() {
                   )}
 
                   <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-800 bg-gray-100 rounded-full">
-                    <FontAwesomeIcon
-                      icon={faLocationDot}
-                      className="text-[12px] text"
-                    />
+                    <MapPin className="text-[12px] text" size={12} />
                     Vị trí: {product.position || 0}
                   </span>
                 </div>
@@ -351,10 +336,7 @@ function ProductDetailAdmin() {
                     Danh mục
                   </h3>
                   <div className="flex items-center p-3 rounded-lg bg-gray-50">
-                    <FontAwesomeIcon
-                      className="text-[18px] mr-3"
-                      icon={faBoxArchive}
-                    />
+                    <Box className="text-[18px] mr-3" size={18} />
                     <span className="font-medium text-gray-900">
                       {categoryMap[product.category_id]}
                     </span>

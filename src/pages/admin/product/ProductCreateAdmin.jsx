@@ -4,9 +4,8 @@ import axios from "../../../utils/axios";
 import { toast } from "react-toastify";
 import { Fragment, useState } from "react";
 import { Slide } from "react-toastify";
+import { Plus, X } from "lucide-react";
 import { useNavigate } from "react-router";
-import { faArrowDown, faPlus, faX } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // 1️⃣ useState – khai báo state
 // 2️⃣ useQueryClient – lấy client
@@ -517,7 +516,7 @@ function ProductCreateAdmin() {
                     className="flex flex-col items-center cursor-pointer"
                   >
                     <div className="flex items-center justify-center w-12 h-12 mb-3 bg-blue-100 rounded-full">
-                      <FontAwesomeIcon icon={faPlus} />
+                      <Plus size={18} />
                     </div>
                     <span className="font-medium text-gray-700">
                       Tải ảnh lên
@@ -553,7 +552,7 @@ function ProductCreateAdmin() {
                             onClick={() => handleRemoveThumb(index)}
                             className="absolute flex items-center justify-center w-8 h-8 text-white transition-opacity bg-red-500 rounded-full opacity-0 top-2 right-2 group-hover:opacity-100 hover:bg-red-600"
                           >
-                            <FontAwesomeIcon icon={faX} />
+                            <X size={18} />
                           </button>
                           <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/60 to-transparent">
                             <p className="text-xs text-white truncate">
@@ -599,7 +598,7 @@ function ProductCreateAdmin() {
                       Thêm sản phẩm
                     </div>
                     <div className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">
-                      <FontAwesomeIcon icon={faPlus} />
+                      <Plus size={18} />
                     </div>
                   </div>
                 )}

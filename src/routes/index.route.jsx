@@ -1,38 +1,12 @@
 import { lazy } from "react";
 import LayoutDefault from "../components/layout/LayoutDefault";
 import LayoutDefaultAdmin from "@/components/admin/layout/LayoutDefault";
-import DashBoard from "@/pages/admin/DashBoard";
-import ProductAdmin from "@/pages/admin/product/ProductAdmin";
-import ProductCreateAdmin from "@/pages/admin/product/ProductCreateAdmin";
-import ProductUpdateAdmin from "@/pages/admin/product/ProductUpdateAdmin";
-import CategoryAdmin from "@/pages/admin/category-product/CategoryAdmin";
-import CategoryUpdateAdmin from "@/pages/admin/category-product/CategoryUpdateAdmin";
-import CategoryCreateAdmin from "@/pages/admin/category-product/CategoryCreateAdmin";
-import CategoryDetail from "@/pages/admin/category-product/CategoryDetail";
 import Login from "@/pages/client/account/Login";
 import Register from "@/pages/client/account/Register";
-import Roles from "@/pages/admin/roles/Roles";
-import RoleCreate from "@/pages/admin/roles/RoleCreate";
-import RoleUpdate from "@/pages/admin/roles/RoleUpdate";
-import RoleDetail from "@/pages/admin/roles/RoleDetail";
-import RolePermissions from "@/pages/admin/roles/RolePermissions";
-import AccountAdmin from "@/pages/admin/accounts/AccountAdmin";
-import AccountCreateAdmin from "@/pages/admin/accounts/AccountCreateAdmin";
-import AccountUpdateAdmin from "@/pages/admin/accounts/AccountUpdateAdmin";
-import AccountDetail from "@/pages/admin/accounts/AccountDetail";
-import LoginAdmin from "@/pages/admin/auth/LoginAdmin";
-import AccountMeAdmin from "@/pages/admin/accounts/AccountMeAdmin";
-import ProductDetailAdmin from "@/pages/admin/product/ProductDetailAdmin";
 import Checkout from "@/pages/client/Checkouts";
-import ShippingMethod from "@/pages/admin/shipping_method/ShippingMethod";
-import ShippingMethodCreate from "@/pages/admin/shipping_method/ShippingMethodCreate";
-import ShippingMethodDetail from "@/pages/admin/shipping_method/ShippingMethodDetail";
-import ShippingMethodUpdate from "@/pages/admin/shipping_method/ShippingMethodUpdate";
-import Orders from "@/pages/admin/orders/order";
 import OrderSuccess from "@/pages/client/orders/OrderSuccess";
 import OrderTracking from "@/pages/client/tracking/Tracking";
 import OrderDetailPage from "@/pages/admin/orders/OrderDetailAdmin";
-import AdminOrderDetail from "@/pages/admin/orders/OrderDetailAdmin";
 import Account from "@/pages/client/account/Account";
 import AuthRedirect from "@/components/admin/layout/AuthRedirect";
 import ProtectedRoute from "@/components/protected-route/ProtectedRoute";
@@ -52,6 +26,91 @@ const ProducstNew = lazy(() => import("@/pages/client/products/ProductsNew"));
 const OrderDetail = lazy(() => import("@/pages/client/orders/OrderDetail"));
 const Contact = lazy(() => import("@/pages/client/contact/Contact"));
 
+// admin
+
+const DashBoard = lazy(() => import("@/pages/admin/DashBoard"));
+
+const ProductAdmin = lazy(() => import("@/pages/admin/product/ProductAdmin"));
+
+const ProductCreateAdmin = lazy(
+  () => import("@/pages/admin/product/ProductCreateAdmin"),
+);
+
+const ProductUpdateAdmin = lazy(
+  () => import("@/pages/admin/product/ProductUpdateAdmin"),
+);
+
+const ProductDetailAdmin = lazy(
+  () => import("@/pages/admin/product/ProductDetailAdmin"),
+);
+
+const CategoryAdmin = lazy(
+  () => import("@/pages/admin/category-product/CategoryAdmin"),
+);
+
+const CategoryUpdateAdmin = lazy(
+  () => import("@/pages/admin/category-product/CategoryUpdateAdmin"),
+);
+
+const CategoryCreateAdmin = lazy(
+  () => import("@/pages/admin/category-product/CategoryCreateAdmin"),
+);
+
+const CategoryDetail = lazy(
+  () => import("@/pages/admin/category-product/CategoryDetail"),
+);
+
+const Roles = lazy(() => import("@/pages/admin/roles/Roles"));
+
+const RoleCreate = lazy(() => import("@/pages/admin/roles/RoleCreate"));
+
+const RoleUpdate = lazy(() => import("@/pages/admin/roles/RoleUpdate"));
+
+const RoleDetail = lazy(() => import("@/pages/admin/roles/RoleDetail"));
+
+const RolePermissions = lazy(
+  () => import("@/pages/admin/roles/RolePermissions"),
+);
+
+const AccountAdmin = lazy(() => import("@/pages/admin/accounts/AccountAdmin"));
+
+const AccountCreateAdmin = lazy(
+  () => import("@/pages/admin/accounts/AccountCreateAdmin"),
+);
+
+const AccountUpdateAdmin = lazy(
+  () => import("@/pages/admin/accounts/AccountUpdateAdmin"),
+);
+
+const AccountDetail = lazy(
+  () => import("@/pages/admin/accounts/AccountDetail"),
+);
+
+const AccountMeAdmin = lazy(
+  () => import("@/pages/admin/accounts/AccountMeAdmin"),
+);
+
+const LoginAdmin = lazy(() => import("@/pages/admin/auth/LoginAdmin"));
+
+const ShippingMethod = lazy(
+  () => import("@/pages/admin/shipping_method/ShippingMethod"),
+);
+const ShippingMethodCreate = lazy(
+  () => import("@/pages/admin/shipping_method/ShippingMethodCreate"),
+);
+const ShippingMethodDetail = lazy(
+  () => import("@/pages/admin/shipping_method/ShippingMethodDetail"),
+);
+
+const ShippingMethodUpdate = lazy(
+  () => import("@/pages/admin/shipping_method/ShippingMethodUpdate"),
+);
+
+const Orders = lazy(() => import("@/pages/admin/orders/order"));
+
+const AdminOrderDetail = lazy(
+  () => import("@/pages/admin/orders/OrderDetailAdmin"),
+);
 export const routes = [
   {
     path: "/",

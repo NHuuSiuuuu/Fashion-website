@@ -3,13 +3,7 @@ import axios from "../../../utils/axios";
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowsRotate,
-  faInfo,
-  faPlus,
-  faX,
-} from "@fortawesome/free-solid-svg-icons";
+import { AlertCircle, Info, Plus, RefreshCw, X } from "lucide-react";
 
 function ProductUpdateAdmin() {
   const { id } = useParams();
@@ -245,10 +239,7 @@ function ProductUpdateAdmin() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="max-w-md p-8 text-center border border-red-200 rounded-lg bg-red-50">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full">
-            <FontAwesomeIcon
-              icon={faCircleExclamation}
-              className="text-red-600"
-            />
+            <AlertCircle className="text-red-600" size={24} />
           </div>
           <h3 className="mb-2 text-xl font-semibold text-red-800">
             Đã xảy ra lỗi
@@ -280,10 +271,7 @@ function ProductUpdateAdmin() {
           </h1>
           <p className="mt-2 text-gray-600">Chỉnh sửa thông tin sản phẩm</p>
           <div className="flex items-center mt-4 text-sm text-gray-500">
-            <FontAwesomeIcon
-              icon={faInfo}
-              className="text-[6px] p-1 border rounded-[100%] mr-1"
-            />
+            <Info className="text-[6px] p-1 border rounded-[100%] mr-1" size={14} />
             ID sản phẩm:{" "}
             <span className="px-2 py-1 ml-1 font-mono bg-gray-100 rounded">
               {id}
@@ -563,7 +551,7 @@ function ProductUpdateAdmin() {
                       className="flex flex-col items-center cursor-pointer"
                     >
                       <div className="flex items-center justify-center w-12 h-12 mb-3 bg-blue-100 rounded-full">
-                        <FontAwesomeIcon icon={faPlus} />
+                        <Plus size={18} />
                       </div>
                       <span className="font-medium text-gray-700">
                         Tải ảnh lên
@@ -599,7 +587,7 @@ function ProductUpdateAdmin() {
                               onClick={() => handleRemoveThumb(index)}
                               className="absolute flex items-center justify-center w-8 h-8 text-white transition-opacity bg-red-500 rounded-full opacity-0 top-2 right-2 group-hover:opacity-100 hover:bg-red-600"
                             >
-                              <FontAwesomeIcon icon={faX} />
+                              <X size={18} />
                             </button>
                             <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/60 to-transparent">
                               <p className="text-xs text-white truncate">
@@ -634,7 +622,7 @@ function ProductUpdateAdmin() {
                               onClick={() => handleRemoveNewThumb(index)}
                               className="absolute flex items-center justify-center w-6 h-6 text-xs text-white transition-opacity bg-red-500 rounded-full opacity-0 top-1 right-1 group-hover:opacity-100 hover:bg-red-600"
                             >
-                              <FontAwesomeIcon icon={faPlus} />
+                              <Plus size={18} />
                             </button>
                             <div className="absolute bottom-0 left-0 right-0 p-1 bg-gradient-to-t from-black/60 to-transparent">
                               <p className="px-1 text-xs text-white truncate">
@@ -679,7 +667,7 @@ function ProductUpdateAdmin() {
                         : "Cập nhật sản phẩm"}
                     </div>
                     <div className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">
-                      <FontAwesomeIcon icon={faArrowsRotate} />
+                      <RefreshCw size={18} />
                     </div>
                   </div>
                 </button>

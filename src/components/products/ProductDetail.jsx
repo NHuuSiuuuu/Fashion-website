@@ -1,9 +1,8 @@
 import { useState } from "react";
 // import thư viện tab
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 import { useNavigate, useParams } from "react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "../../utils/axios";
@@ -146,13 +145,28 @@ function ProductDetail() {
               ))}
             </div>
             <div className="block mx-auto lg:hidden lg-[10px]">
-              <Slider {...settings}>
+              <Splide
+                options={{
+                  rewind: true, // đi đến cuối sẽ dừng
+                  type: "slide",
+                  autoplay: false,
+                  speed: 800,
+                  arrows: true, // nút bấm
+                  pagination: false,
+                  perMove: 1, // mỗi lần chuyển bnh slide
+                  perPage: 1, // hiển thị bao nhiêu sản phẩm tren màn hình
+                  flickPower: 3000,
+                }}
+              >
                 {product.thumbnail.map((item, index) => (
-                  <div key={index}>
-                    <img className="" src={item} alt={product.title} />
-                  </div>
+                  <SplideSlide>
+                    {" "}
+                    <div key={index}>
+                      <img className="" src={item} alt={product.title} />
+                    </div>
+                  </SplideSlide>
                 ))}
-              </Slider>
+              </Splide>
             </div>
           </div>
           {/*END LEFT:  Img Product */}

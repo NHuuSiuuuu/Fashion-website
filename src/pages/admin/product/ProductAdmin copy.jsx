@@ -1,3 +1,5 @@
+import { ImageIcon, Info, Pencil, RefreshCw, Star, Trash2 } from "lucide-react";
+
 <div className="min-h-screen p-4 md:p-6 bg-white dark:bg-[#0f1117]">
 
       {/* ── Header ── */}
@@ -87,7 +89,7 @@
                          hover:bg-gray-50   dark:hover:bg-white/[0.04]
                          hover:text-gray-800 dark:hover:text-gray-200"
             >
-              <FontAwesomeIcon icon={faArrowsRotate} />
+              <RefreshCw size={16} />
               Xóa bộ lọc
             </button>
           </div>
@@ -181,8 +183,10 @@
                               src={item.thumbnail[0]} alt={item.title} />
                           ) : (
                             <div className="flex items-center justify-center w-full h-full">
-                              <FontAwesomeIcon icon={faImage}
-                                className="text-gray-400 dark:text-gray-600" />
+                              <ImageIcon
+                                className="text-gray-400 dark:text-gray-600"
+                                size={18}
+                              />
                             </div>
                           )}
                         </div>
@@ -200,7 +204,7 @@
                               <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium
                                                text-yellow-700 dark:text-yellow-400
                                                bg-yellow-100   dark:bg-yellow-400/10">
-                                <FontAwesomeIcon icon={faStar} className="text-[8px]" />
+                                <Star className="text-[8px]" size={8} />
                                 Nổi bật
                               </span>
                             )}
@@ -277,7 +281,7 @@
                                      text-indigo-600    dark:text-indigo-400
                                      border-indigo-200  dark:border-indigo-500/30
                                      hover:bg-indigo-50 dark:hover:bg-indigo-500/10">
-                          <FontAwesomeIcon icon={faPenToSquare} />
+                          <Pencil size={16} />
                           Sửa
                         </Link>
                         <button type="button" onClick={() => handleRemoveProduct(item._id)}
@@ -285,7 +289,7 @@
                                      text-red-600    dark:text-red-400
                                      border-red-200  dark:border-red-500/30
                                      hover:bg-red-50 dark:hover:bg-red-500/10">
-                          <FontAwesomeIcon icon={faTrashCan} />
+                          <Trash2 size={16} />
                           Xóa
                         </button>
                         <Link to={`/admin/product/detail/${item._id}`}
@@ -293,8 +297,10 @@
                                      text-gray-600     dark:text-gray-400
                                      border-gray-200   dark:border-white/[0.08]
                                      hover:bg-gray-100 dark:hover:bg-white/[0.06]">
-                          <FontAwesomeIcon icon={faInfo}
-                            className="text-[7px] p-0.5 border rounded-full border-current" />
+                          <Info
+                            className="text-[7px] p-0.5 border rounded-full border-current"
+                            size={14}
+                          />
                           Chi tiết
                         </Link>
                       </div>
@@ -319,8 +325,10 @@
                         src={item.thumbnail[0]} alt={item.title} />
                     ) : (
                       <div className="flex items-center justify-center w-full h-full">
-                        <FontAwesomeIcon icon={faImage}
-                          className="text-gray-400 dark:text-gray-600" />
+                        <ImageIcon
+                          className="text-gray-400 dark:text-gray-600"
+                          size={18}
+                        />
                       </div>
                     )}
                   </div>
@@ -336,7 +344,7 @@
                         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium
                                          text-yellow-700 dark:text-yellow-400
                                          bg-yellow-100   dark:bg-yellow-400/10">
-                          <FontAwesomeIcon icon={faStar} className="text-[8px]" /> Nổi bật
+                          <Star className="text-[8px]" size={8} /> Nổi bật
                         </span>
                       )}
                       <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium border ${
@@ -387,7 +395,7 @@
                                text-indigo-600    dark:text-indigo-400
                                border-indigo-200  dark:border-indigo-500/30
                                hover:bg-indigo-50 dark:hover:bg-indigo-500/10">
-                    <FontAwesomeIcon icon={faPenToSquare} /> Sửa
+                    <Pencil size={16} /> Sửa
                   </Link>
                   <Link to={`/admin/product/detail/${item._id}`}
                     className="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-xs font-medium rounded-lg border transition
@@ -401,7 +409,7 @@
                                text-red-600    dark:text-red-400
                                border-red-200  dark:border-red-500/30
                                hover:bg-red-50 dark:hover:bg-red-500/10">
-                    <FontAwesomeIcon icon={faTrashCan} /> Xóa
+                    <Trash2 size={16} /> Xóa
                   </button>
                 </div>
               </div>

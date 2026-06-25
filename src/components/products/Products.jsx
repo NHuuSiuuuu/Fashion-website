@@ -11,11 +11,12 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Slider from "react-slick";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/price";
 import Pagination from "../layout/Pagination";
 import LoadingPage from "../comon/LoadingPage";
 import ErrorPage from "../comon/ErrorPage";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 function Products() {
   const [opened, setOpened] = useState(false);
@@ -360,17 +361,31 @@ function Products() {
               </div>
               {/* Slick small */}
               <div>
-                <Slider {...settings}>
+                <Splide
+                  options={{
+                    rewind: true, // đi đến cuối sẽ dừng
+                    type: "slide",
+                    autoplay: false,
+                    speed: 500,
+                    arrows: true, // nút bấm
+                    pagination: false,
+                    perMove: 1, // mỗi lần chuyển bnh slide
+                    perPage: 4, // hiển thị bao nhiêu sản phẩm tren màn hình
+                    flickPower: 3000,
+                  }}
+                >
                   {selectedProduct?.thumbnail.map((item, index) => (
-                    <div
-                      key={index}
-                      onClick={() => setIndexThumb(index)}
-                      className="lg:px-1"
-                    >
-                      <img className="w-full " src={item} alt={item.title} />
-                    </div>
+                    <SplideSlide>
+                      <div
+                        key={index}
+                        onClick={() => setIndexThumb(index)}
+                        className="lg:px-1"
+                      >
+                        <img className="w-full " src={item} alt={item.title} />
+                      </div>
+                    </SplideSlide>
                   ))}
-                </Slider>
+                </Splide>
               </div>
             </div>
 

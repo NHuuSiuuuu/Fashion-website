@@ -1,15 +1,12 @@
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/price";
-import { faCreditCard, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import SeoHead from "@/components/comon/SeoHead";
 import { toast } from "react-toastify";
 import { createOrder, getCart, getshippingMethod } from "@/apis/cart.api";
 import useAddressSelector from "@/hooks/useAddressSelector";
-import { ChevronDown } from "lucide-react";
+import { Banknote, ChevronDown, ChevronRight, CreditCard } from "lucide-react";
 import useAuth from "@/hooks/useAuth";
 
 // Trong component Checkout
@@ -171,10 +168,7 @@ function Checkout() {
             </Link>
           </li>
           <li className="inline-block mx-[10px]">
-            <FontAwesomeIcon
-              className="text-[#999999] text-[10px]"
-              icon={faChevronRight}
-            />
+            <ChevronRight className="text-[#999999] text-[10px]" size={10} />
           </li>
           <li className="text-black inline-block text-[12px]">
             Thông tin giao hàng
@@ -355,10 +349,9 @@ function Checkout() {
                   <div className="flex flex-col items-center justify-center ">
                     <div className="">
                       {" "}
-                      <FontAwesomeIcon
-                        className="text-[#d9d9d9] text-[50px] "
-                        icon={faTruck}
-                      />
+                      <span className="inline-block text-[#d9d9d9] text-[50px]">
+                        Truck
+                      </span>
                     </div>
                     {!selectedProvinceCode ? (
                       <p className="text-[14px] text-[#737373]">
@@ -442,10 +435,7 @@ function Checkout() {
                     htmlFor="cod"
                     className="flex items-center ml-3 cursor-pointer"
                   >
-                    <FontAwesomeIcon
-                      icon={faMoneyBill}
-                      className="mr-2 text-gray-600"
-                    />
+                    <Banknote className="mr-2 text-gray-600" size={16} />
                     <span className="text-sm">
                       Thanh toán khi nhận hàng (COD)
                     </span>
@@ -466,10 +456,7 @@ function Checkout() {
                     htmlFor="vnpay"
                     className="flex items-center ml-3 cursor-pointer"
                   >
-                    <FontAwesomeIcon
-                      icon={faCreditCard}
-                      className="mr-2 text-gray-600"
-                    />
+                    <CreditCard className="mr-2 text-gray-600" size={16} />
                     <span className="text-sm">Thanh toán qua VNPAY</span>
                   </label>
                 </div>

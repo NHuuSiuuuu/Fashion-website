@@ -1,18 +1,17 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "../../../utils/axios";
+import {
+  AlertCircle,
+  ImageIcon,
+  Info,
+  Pencil,
+  Plus,
+  RefreshCw,
+  Star,
+  Trash2,
+} from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowsRotate,
-  faCircleExclamation,
-  faImage,
-  faInfo,
-  faPenToSquare,
-  faPlus,
-  faStar,
-  faTrashCan,
-} from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
@@ -136,10 +135,7 @@ function ProductAdmin() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="max-w-md p-8 text-center border border-red-200 rounded-lg bg-red-50">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full">
-            <FontAwesomeIcon
-              icon={faCircleExclamation}
-              className="text-red-600"
-            />
+            <AlertCircle className="text-red-600" size={24} />
           </div>
           <h3 className="mb-2 text-xl font-semibold text-red-800">
             Đã xảy ra lỗi
@@ -188,7 +184,7 @@ function ProductAdmin() {
                   Thêm sản phẩm
                 </div>
                 <div className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">
-                  <FontAwesomeIcon icon={faPlus} />
+                  <Plus size={18} />
                 </div>
               </div>
             </Link>
@@ -280,10 +276,7 @@ function ProductAdmin() {
                          focus:outline-none focus:ring-2  focus:border-transparent"
               >
                 <div className="flex items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faArrowsRotate}
-                    className="mx-[5px] text-[16px]"
-                  />
+                  <RefreshCw className="mx-[5px] text-[16px]" size={16} />
                   Xóa bộ lọc
                 </div>
               </button>
@@ -436,10 +429,7 @@ function ProductAdmin() {
                             />
                           ) : (
                             <div className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-lg">
-                              <FontAwesomeIcon
-                                icon={faImage}
-                                className="w-6 h-6 text-gray-400"
-                              />
+                              <ImageIcon className="w-6 h-6 text-gray-400" size={24} />
                             </div>
                           )}
                         </div>
@@ -453,7 +443,7 @@ function ProductAdmin() {
                           <div className="flex items-center mt-1">
                             {item.featured === "1" && (
                               <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
-                                <FontAwesomeIcon icon={faStar} />
+                                <Star size={12} />
                                 Nổi bật
                               </span>
                             )}
@@ -526,7 +516,7 @@ function ProductAdmin() {
                           to={`/admin/product/update/${item._id}`}
                           className="inline-flex items-center px-3 py-1.5 border border-blue-300 text-blue-700 text-sm font-medium rounded-lg hover:bg-blue-50 transition"
                         >
-                          <FontAwesomeIcon icon={faPenToSquare} />
+                          <Pencil size={16} />
                           Sửa
                         </Link>
                         <button
@@ -534,16 +524,16 @@ function ProductAdmin() {
                           onClick={() => handleRemoveProduct(item._id)}
                           className="inline-flex items-center px-3 py-1.5 border border-red-300 text-red-700 text-sm font-medium rounded-lg hover:bg-red-50 transition"
                         >
-                          <FontAwesomeIcon icon={faTrashCan} />
+                          <Trash2 size={16} />
                           Xóa
                         </button>
                         <Link
                           to={`/admin/product/detail/${item._id}`}
                           className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition"
                         >
-                          <FontAwesomeIcon
-                            icon={faInfo}
+                          <Info
                             className="text-[7px] p-1 border rounded-[100%] mr-1"
+                            size={14}
                           />
                           Chi tiết
                         </Link>
