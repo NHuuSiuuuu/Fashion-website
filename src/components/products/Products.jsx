@@ -39,14 +39,7 @@ function Products() {
     cartId = crypto.randomUUID();
     localStorage.setItem("cart_id", cartId);
   }
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    swipeToSlide: true, // cho phép vuốt tự do không bị cứng 1 bước
-  };
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
@@ -239,7 +232,10 @@ function Products() {
 
           {data?.products.map((item, index) => (
             <Link key={index} to={`/products/${item.slug}`}>
-              <div key={index} className="px-[15px]  overflow-hidden ">
+              <div
+                key={index}
+                className="md:px-[15px] px-[12px]   overflow-hidden "
+              >
                 <div className="relative overflow-hidden product-img group aspect-[3/4]">
                   {/* icon */}
                   <div
@@ -375,9 +371,8 @@ function Products() {
                   }}
                 >
                   {selectedProduct?.thumbnail.map((item, index) => (
-                    <SplideSlide>
+                    <SplideSlide key={index}>
                       <div
-                        key={index}
                         onClick={() => setIndexThumb(index)}
                         className="lg:px-1"
                       >

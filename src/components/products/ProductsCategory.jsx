@@ -17,11 +17,9 @@ import { calculateDiscountedPrice, formatPrice } from "../../utils/price";
 import Pagination from "../layout/Pagination";
 import FilterSort from "./FilterSort";
 
-// import Tippy from "@tippyjs/react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import useDebounce from "@/hooks/useDebounce";
-// import { formatPrice,calculateDiscountedPrice } from "../../utils/price";
 
 function ProductsCategory({ category_id, title_breadcrumb }) {
   const [opened, setOpened] = useState(false);
@@ -46,14 +44,7 @@ function ProductsCategory({ category_id, title_breadcrumb }) {
     cartId = crypto.randomUUID();
     localStorage.setItem("cart_id", cartId);
   }
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    swipeToSlide: true, // cho phép vuốt tự do không bị cứng 1 bước
-  };
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
@@ -308,7 +299,10 @@ function ProductsCategory({ category_id, title_breadcrumb }) {
 
           {data?.products.map((item, index) => (
             <Link key={index} to={`/products/${item.slug}`}>
-              <div key={index} className="px-[15px]  overflow-hidden ">
+              <div
+                key={index}
+                className="md:px-[15px] px-[12px]  overflow-hidden "
+              >
                 <div className="relative overflow-hidden product-img group aspect-[3/4]">
                   {/* icon */}
                   <div

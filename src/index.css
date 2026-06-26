@@ -48,7 +48,7 @@
 
 @layer utilities {
   #topbar {
-    @apply bg-[#f0e2d0] text-base py-2.5 text-[#795444];
+    @apply bg-[#f0e2d0] text-base md:py-2.5 p-1.5 text-[#795444];
   }
   .container {
     @apply text-[13px];

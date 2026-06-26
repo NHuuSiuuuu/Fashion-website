@@ -1,4 +1,3 @@
-// import Tippy from "@tippyjs/react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import useDebounce from "@/hooks/useDebounce";

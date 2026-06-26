@@ -35,10 +35,10 @@ const CustomerReviews = () => {
   ];
 
   return (
-    <div className="mt-5 p-[5%] ">
-      <h2 className="text-[33px] font-semibold text-center mb-[70px]">
+    <div className="p-[5%] bg-[#F5F5F5] pt-0">
+      <p className="block text-center text-[24px] text-[#a47b67] font-bold uppercase py-8">
         CUSTOMER REVIEWS
-      </h2>
+      </p>
 
       <Splide
         options={{

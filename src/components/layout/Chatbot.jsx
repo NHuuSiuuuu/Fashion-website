@@ -174,7 +174,7 @@ function Chatbot() {
                   <MessageCircle size={16} />
                 </div>
                 <div className="px-4 py-3 bg-white border border-gray-200 rounded-bl-sm shadow-sm rounded-2xl">
-                  <div class="loader"></div>
+                  <div className="loader"></div>
                 </div>
               </div>
             </div>

@@ -1,10 +1,9 @@
-import { CreditCard, Diamond, Heart, ShoppingBag } from "lucide-react";
+import { CreditCard, Gem, HandHeart, ShoppingBag } from "lucide-react";
 import React from "react";
-
 
 const PolicySection = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 mt-[50px] gap-4 ">
+    <div className="grid grid-cols-1 lg:grid-cols-4 md:mt-[50px] gap-4 ">
       <div className="flex gap-4 items-center shadow-[0_8px_24px_hsla(210,8%,62%,0.2)] p-[20px] hover:translate-y-[-6px] hover:transition-all hover:duration-500">
         <div>
           <ShoppingBag size={33} lg:size={39} />
@@ -33,7 +32,7 @@ const PolicySection = () => {
       </div>
       <div className="flex gap-4 items-center shadow-[0_8px_24px_hsla(210,8%,62%,0.2)] p-[20px] hover:translate-y-[-6px] hover:transition-all hover:duration-500">
         <div>
-          <Diamond size={33} lg:size={39} />
+          <Gem size={33} lg:size={39} />
         </div>
         <div>
           <h3 className="font-semibold text-[14px] lg:text-base  mb-[10px]">
@@ -46,7 +45,7 @@ const PolicySection = () => {
       </div>
       <div className="flex gap-4 items-center shadow-[0_8px_24px_hsla(210,8%,62%,0.2)] p-[20px] hover:translate-y-[-6px] hover:transition-all hover:duration-500">
         <div>
-          <Heart size={33} lg:size={39} />
+          <HandHeart size={33} lg:size={39} />
         </div>
         <div>
           <h3 className="font-semibold text-[14px] lg:text-base  mb-[10px]">

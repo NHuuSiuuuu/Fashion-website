@@ -1,0 +1,17 @@
+import React, { useEffect, useState } from "react";
+
+export default function useMobile() {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 768;
+  });
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  
+  return isMobile;
+}

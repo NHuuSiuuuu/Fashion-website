@@ -12,16 +12,14 @@ export const getProductDetail = async (slug) => {
     Tìm kiếm sản phẩm
   =======================*/
 export const searchProducts = async (debounceValue) => {
-  const { data } = await axios.get(
-    `/product/search?keyword=${debounceValue}`,
-  );
+  const { data } = await axios.get(`/product/search?keyword=${debounceValue}`);
   return data;
 };
 
 /* =======================
     Danh sách sản phẩm
   =======================*/
-export const getProducts = async (limit = 20) => {
-  const { data } = await axios.get(`/product?limit=${limit}`);
+export const getProducts = async ({ limit = 20, sort = "" }) => {
+  const { data } = await axios.get(`/product?limit=${limit}&sort=${sort}`);
   return data;
 };

@@ -159,9 +159,9 @@ function ProductDetail() {
                 }}
               >
                 {product.thumbnail.map((item, index) => (
-                  <SplideSlide>
+                  <SplideSlide key={index}>
                     {" "}
-                    <div key={index}>
+                    <div>
                       <img className="" src={item} alt={product.title} />
                     </div>
                   </SplideSlide>

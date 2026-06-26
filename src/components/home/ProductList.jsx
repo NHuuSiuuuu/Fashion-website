@@ -10,16 +10,15 @@ import { getProducts } from "@/apis/products.api";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-
-
+import { Grid } from "@splidejs/splide-extension-grid";
 function ProductList() {
   const [openDialog, setOpendialog] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["products"],
-    queryFn: () => getProducts(),
+    queryKey: ["products", 6],
+    queryFn: () => getProducts({ limit: 6, sort: "createdAt:desc" }),
   });
 
   if (isLoading) return <LoadingPage />;
@@ -27,20 +26,20 @@ function ProductList() {
   return (
     <div className="relative w-full px-3 mx-auto mt-10 bg-white sm:px-4 md:px-16 xl:px-18 md:mt-20 lg:mt-35">
       <div className="mx-auto ">
-        <Link
+        <p
           className="block text-center text-[24px] text-[#a47b67] font-bold uppercase py-8"
-          to="/products"
+          to="/"
         >
-          product
-        </Link>
+          WHAT'S NEW
+        </p>
       </div>
 
       <Splide
         options={{
           // perPage: 4,
           rewind: true, // đi đến cuối sẽ dừng
-          type: "slide",
-          // type: "loop",
+          // type: "slide",
+          type: "loop",
           autoplay: true,
           interval: 3000, // khoảng thời gian chuyển slide: 3s
           speed: 800,
@@ -48,22 +47,27 @@ function ProductList() {
           pagination: false,
           perMove: 1, // mỗi lần chuyển bnh slide
           perPage: 4, // hiển thị bao nhiêu sản phẩm tren màn hình
+
           breakpoints: {
             1280: { perPage: 4 }, // >=1280
-            1024: { perPage: 2 }, // >=1024 = md
-            768: { perPage: 1 }, // <1024
+            1024: { perPage: 2, pagination: true }, // >=1024 = md
+            768: {
+              perPage: 2,
+              pagination: true,
+            }, // <1024
           },
+
+          dragAngleThreshold: 45,
+          gap: "12px",
         }}
-        aria-label="Danh sách sản phẩm nổi bật"
+        extensions={{ Grid }}
+        className="pb-8"
       >
         {data?.products.map((item) => (
-          <SplideSlide>
-            <div
-              key={item.slug}
-              onClick={() => navigate(`/products/${item?.slug}`)}
-            >
+          <SplideSlide key={item.slug}>
+            <div onClick={() => navigate(`/products/${item?.slug}`)}>
               {/* Sản phâm */}
-              <div className="px-[15px]  overflow-hidden ">
+              <div className="overflow-hidden md:px-[10px] ">
                 <div className="relative overflow-hidden product-img group aspect-[3/4]">
                   {/* icon */}
                   <div
@@ -78,7 +82,7 @@ function ProductList() {
                     scale-0 size-[44px] rounded-full bg-white hidden md:flex items-center justify-center 
                     "
                   >
-                      <ZoomIn className="size-[20px] text-black" />
+                    <ZoomIn className="size-[20px] text-black" />
                   </div>
 
                   <div className="">

@@ -82,7 +82,7 @@ function Header({ active }) {
                     // interactive
                     // visible
                     interactive
-                    className="shadow-lg "
+                    class="shadow-lg "
                     delay={[100, 150]}
                     offset={[0, 8]}
                     render={(attrs) => (

@@ -1,4 +1,3 @@
-
 import { ZoomIn } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
@@ -9,25 +8,25 @@ import LoadingPage from "../comon/LoadingPage";
 import ErrorPage from "../comon/ErrorPage";
 import { getProducts } from "@/apis/products.api";
 
-function ProductList() {
+function ProductSale() {
   const [openDialog, setOpendialog] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["products"],
-    queryFn: () => getProducts(8),
+    queryKey: ["products", 8],
+    queryFn: () => getProducts({ limit: 8, sort: "price:asc" }),
   });
 
   if (isLoading) return <LoadingPage />;
   if (isError) return <ErrorPage text="Không thể tải danh sách sản phẩm" />;
   return (
-    <div className="relative w-full px-3 mx-auto mt-10 bg-white sm:px-4 md:px-16 xl:px-18 md:mt-20 lg:mt-35">
+    <div className="relative w-full mx-auto bg-white md:mt-20 ">
       <div className="mx-auto ">
-        <Link
+        <p
           className="block text-center text-[24px] text-[#a47b67] font-bold uppercase py-8"
-          to="/products"
+          to="/"
         >
           BEST SELLERS
-        </Link>
+        </p>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-y-3.5">
@@ -128,4 +127,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default ProductSale;

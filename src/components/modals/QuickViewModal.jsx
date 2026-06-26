@@ -112,10 +112,7 @@ function QuickViewModal({ selectedProduct, openDialog, setOpendialog }) {
               >
                 {selectedProduct?.thumbnail.map((item, index) => (
                   <SplideSlide key={index}>
-                    <div
-                      onClick={() => setIndexThumb(index)}
-                      className="px-2"
-                    >
+                    <div onClick={() => setIndexThumb(index)} className="px-2">
                       <img className="w-full" src={item} alt="" />
                     </div>
                   </SplideSlide>
